@@ -627,7 +627,7 @@ async function sendForm(){
   if(!name||!email||!msg){alert('Please fill in name, email, and message.');return;}
   btn.textContent='Sending...';btn.disabled=true;
   try{
-    const res = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID',{
+    const res = await fetch('https://formspree.io/f/mvzvdjgq',{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
       body:JSON.stringify({name,email,subject,message:msg})
