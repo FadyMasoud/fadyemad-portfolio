@@ -400,8 +400,8 @@ footer span{color:#fff;font-weight:600}
       <div class="skill-cat"><div class="skill-cat-title">Backend</div><div class="skill-tags"><span class="tag tag-blue">PHP 8.0–8.3</span><span class="tag tag-blue">Laravel 9–10</span><span class="tag tag-blue">Node.js 16–20</span><span class="tag">RESTful API</span><span class="tag">WebSockets</span><span class="tag">JWT / OAuth</span><span class="tag">OOP</span><span class="tag">Design Patterns</span></div></div>
       <div class="skill-cat"><div class="skill-cat-title">Frontend</div><div class="skill-tags"><span class="tag tag-blue">Angular</span><span class="tag tag-blue">React (JSX)</span><span class="tag">JavaScript ES6+</span><span class="tag">TypeScript</span><span class="tag">HTML / CSS</span></div></div>
       <div class="skill-cat"><div class="skill-cat-title">Databases</div><div class="skill-tags"><span class="tag tag-blue">MySQL</span><span class="tag tag-blue">PostgreSQL</span><span class="tag">Stored Procedures</span><span class="tag">Query Optimization</span></div></div>
-      <div class="skill-cat"><div class="skill-cat-title">AI & LLM</div><div class="skill-tags"><span class="tag tag-blue">GPT-4o</span><span class="tag tag-blue">Gemini</span><span class="tag tag-blue">OpenRouter</span><span class="tag">Hugging Face</span><span class="tag">Claude</span><span class="tag">Prompt Engineering</span><span class="tag">LLM Guardrails</span><span class="tag">ScrapingBee</span></div></div>
-      <div class="skill-cat"><div class="skill-cat-title">DevOps & Tools</div><div class="skill-tags"><span class="tag tag-blue">CI/CD Pipelines</span><span class="tag">Jenkins</span><span class="tag">Postman</span><span class="tag">Git</span><span class="tag">Stripe</span><span class="tag">Linux</span></div></div>
+      <div class="skill-cat"><div class="skill-cat-title">AI & LLM</div><div class="skill-tags"><span class="tag tag-blue">GPT-4o</span><span class="tag tag-blue">Gemini</span><span class="tag tag-blue">OpenRouter</span><span class="tag">Hugging Face</span><span class="tag">Claude</span><span class="tag">Prompt Engineering</span><span class="tag">LLM Guardrails</span><span class="tag tag-blue">LangChain</span><span class="tag tag-blue">LlamaIndex</span><span class="tag">RAG</span><span class="tag">ScrapingBee</span></div></div>
+      <div class="skill-cat"><div class="skill-cat-title">DevOps & Tools</div><div class="skill-tags"><span class="tag tag-blue">Docker</span><span class="tag tag-blue">Kubernetes</span><span class="tag tag-blue">CI/CD Pipelines</span><span class="tag">Jenkins</span><span class="tag">Redis</span><span class="tag">Sentry</span><span class="tag">Postman</span><span class="tag">Git</span><span class="tag">Stripe</span><span class="tag">Linux</span></div></div>
       <div class="skill-cat"><div class="skill-cat-title">Languages</div><div class="skill-tags"><span class="tag tag-blue">Arabic — Fluent</span><span class="tag">English — Professional</span><span class="tag">C++</span><span class="tag">Python</span></div></div>
     </div>
   </div>
@@ -462,7 +462,7 @@ footer span{color:#fff;font-weight:600}
   <div class="container">
     <div class="section-label reveal">Projects</div>
     <div class="section-title reveal">Selected Work</div>
-    <p class="section-sub reveal">Over 15 large-scale production projects. Names and source code are confidential per NDA — detailed case studies below reflect real business logic, architecture decisions, and outcomes.</p>
+    <p class="section-sub reveal">Over 15 large-scale production projects. Client project names and source code are confidential per NDA — case studies reflect real business logic, architecture decisions, and outcomes. Open-source projects include GitHub links and a video demo.</p>
     <div class="projects-list">
 
       <div class="project-card reveal">
@@ -534,6 +534,46 @@ footer span{color:#fff;font-weight:600}
             <div class="case-box"><div class="case-label res">Result</div><div class="case-text">Functional AI-powered ordering portal where customers interact naturally. Real-time order updates delivered via WebSocket broadcasting to both customer and restaurant dashboards.</div></div>
           </div>
           <div class="pc-tags"><span class="tag tag-blue">Node.js</span><span class="tag tag-blue">AI Chatbot</span><span class="tag">WebSockets</span><span class="tag">RESTful API</span><span class="tag">Laravel</span><span class="tag">Real-time Broadcasting</span></div>
+        </div>
+      </div>
+
+
+      <div class="project-card reveal">
+        <div class="pc-header"><div class="pc-title">Flash Sale Checkout API</div><div class="pc-type">High-Concurrency / Open Source</div></div>
+        <div class="pc-body">
+          <div class="case-grid">
+            <div class="case-box"><div class="case-label prob">Problem</div><div class="case-text">Flash sales with limited stock create brutal race conditions — hundreds of buyers hitting the same product simultaneously can oversell inventory and corrupt order state.</div></div>
+            <div class="case-box"><div class="case-label sol">Solution</div><div class="case-text">Built a Laravel 12 API enforcing strict stock invariants with MySQL transactions and row-level locking (SELECT ... FOR UPDATE), deadlock retry logic, a short-lived hold/reservation system with idempotent expiry, and fully idempotent payment webhooks safe against duplicate and out-of-order delivery.</div></div>
+            <div class="case-box"><div class="case-label res">Result</div><div class="case-text">Zero overselling under heavy parallel traffic. Available stock never goes negative. Duplicate webhooks never double-charge or double-release stock. Cached product reads keep response times low at peak load.</div></div>
+          </div>
+          <div class="pc-tags"><span class="tag tag-blue">Laravel 12</span><span class="tag tag-blue">MySQL</span><span class="tag tag-blue">Row-Level Locking</span><span class="tag">Idempotency</span><span class="tag">Caching</span><span class="tag">Race Conditions</span><span class="tag">Webhooks</span></div>
+          <div class="pc-links" style="margin-top:12px"><a href="https://github.com/FadyMasoud/flash-sale-apis" target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 18px;font-size:.85rem">View on GitHub →</a></div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="pc-header"><div class="pc-title">YumDash — Online Food Ordering Platform</div><div class="pc-type">Full-Stack / E-Commerce</div></div>
+        <div class="pc-body">
+          <div class="case-grid">
+            <div class="case-box"><div class="case-label prob">Problem</div><div class="case-text">Restaurants needed a complete bilingual (Arabic/English) online ordering experience — browsing, cart, secure payment, and live order tracking — with a full admin panel to manage the catalog.</div></div>
+            <div class="case-box"><div class="case-label sol">Solution</div><div class="case-text">Built a full-stack Node.js/Express platform with Sequelize + MySQL, Stripe payment integration with saved cards, Socket.IO for real-time order status updates, i18next Arabic/English localization, session-based auth with bcrypt, and input validation across all endpoints.</div></div>
+            <div class="case-box"><div class="case-label res">Result</div><div class="case-text">Complete working platform: customers order and pay in their language and track order status live; admins manage products, categories, and orders from a dedicated dashboard.</div></div>
+          </div>
+          <div class="pc-tags"><span class="tag tag-blue">Node.js</span><span class="tag tag-blue">Express</span><span class="tag tag-blue">Sequelize</span><span class="tag">MySQL</span><span class="tag">Socket.IO</span><span class="tag">Stripe</span><span class="tag">i18next AR/EN</span></div>
+          <div class="pc-links" style="margin-top:12px"><a href="https://github.com/FadyMasoud/Online_Food_Ordering" target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 18px;font-size:.85rem">View on GitHub →</a> <a href="https://drive.google.com/file/d/1dDMbuMn8Qm5r9IpjfmVHh3Xw1KfEZClM/view" target="_blank" rel="noopener" class="btn btn-primary" style="padding:8px 18px;font-size:.85rem">▶ Watch Video Demo</a></div>
+        </div>
+      </div>
+
+      <div class="project-card reveal">
+        <div class="pc-header"><div class="pc-title">Daily Tasks Management System</div><div class="pc-type">Full-Stack / Productivity</div></div>
+        <div class="pc-body">
+          <div class="case-grid">
+            <div class="case-box"><div class="case-label prob">Problem</div><div class="case-text">Teams needed a bilingual task management tool with automated reminders and the ability to bulk-import structured data from Excel instead of manual entry.</div></div>
+            <div class="case-box"><div class="case-label sol">Solution</div><div class="case-text">Built with React + Vite + Tailwind + shadcn/ui on the frontend and Node.js/Express + MySQL on the backend. JWT authentication with bcrypt, scheduled email notifications via Resend + node-cron, Excel upload for bulk data import, and full Arabic/English support with i18next.</div></div>
+            <div class="case-box"><div class="case-label res">Result</div><div class="case-text">Deployed end-to-end — frontend on Netlify, backend on Render — with automated email reminders running on schedule and seamless AR/EN switching.</div></div>
+          </div>
+          <div class="pc-tags"><span class="tag tag-blue">React</span><span class="tag tag-blue">Vite</span><span class="tag tag-blue">Tailwind</span><span class="tag">Node.js</span><span class="tag">MySQL</span><span class="tag">JWT</span><span class="tag">node-cron</span><span class="tag">Netlify / Render</span></div>
+          <div class="pc-links" style="margin-top:12px"><a href="https://github.com/FadyMasoud/Daily_Tasks" target="_blank" rel="noopener" class="btn btn-outline" style="padding:8px 18px;font-size:.85rem">View on GitHub →</a></div>
         </div>
       </div>
 
